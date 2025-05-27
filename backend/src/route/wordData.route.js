@@ -6,7 +6,6 @@ const router =express.Router()
 router.get('/words', listAllWords)
 router.get('/words/:query', filterByWord)
 router.post('/words', addWord)
-router.post('/word/edit/:id',editWord)
 router.post('/word/delete/:id', deleteWord)
 
 export default router

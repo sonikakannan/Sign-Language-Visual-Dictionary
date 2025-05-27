@@ -40,25 +40,6 @@ export const addWord = async (req, res) => {
   }
 };
 
-// POST /word/edit/:id - Edit a word
-export const editWord = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { word, definition, imageUrl, videoUrl } = req.body;
-
-    const updatedWord = await Word.findByIdAndUpdate(
-      id,
-      { word: word?.toLowerCase(), definition, imageUrl, videoUrl },
-      { new: true }
-    );
-
-    if (!updatedWord) return res.status(404).json({ message: 'Word not found' });
-
-    res.status(200).json(updatedWord);
-  } catch (error) {
-    res.status(500).json({ message: 'Error editing word', error });
-  }
-};
 
 // POST /word/delete/:id - Delete a word
 export const deleteWord = async (req, res) => {
