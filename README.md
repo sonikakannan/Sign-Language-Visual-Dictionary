@@ -38,8 +38,8 @@ npm install
 Create a `.env` file in `/backend`:
 
 ```env
-MONGO_URI=your_mongodb_connection_string
-PORT=5000
+PORT=5001   
+MONGODB_URL=mongodb+srv://sonikakannan66:CzlDzsezMfi8eK9i@cluster0.y2tczkv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 Run the backend server:
@@ -58,7 +58,7 @@ npm install
 Start the frontend:
 
 ```bash
-npm start
+npm run dev
 ```
 
 ---
@@ -89,19 +89,9 @@ npm start
 ### 🧠 API Endpoints
 
 * `GET /words` – List all words
-* `GET /words/:query` – Fetch a word by query
+* `GET /words/:query` – Filter a word by query
 * `POST /words` – Add a new word
-
-Example payload for `POST /words`:
-
-```json
-{
-  "word": "Learn",
-  "definition": "To gain knowledge",
-  "imageUrl": "https://...",
-  "videoUrl": "https://..."
-}
-```
+* `POST /word/delete/:id` – Delete a word
 
 ---
 
@@ -110,8 +100,8 @@ Example payload for `POST /words`:
 * ✅ Mobile responsive design
 * ✅ Toast notifications using `react-toastify`
 * ✅ Loading spinner during API calls
-* 🚧 (Optional) Edit/Delete functionality – *in progress or pending*
-* 🚧 React Context/Redux – *not included in this version*
+* 🚧 Delete functionality
+* 🚧 Redux Toolkit – *for state management*
 
 ---
 
@@ -131,14 +121,3 @@ Example payload for `POST /words`:
 * User feedback with toast notifications
 * Mobile-friendly and responsive layout
 
----
-
-## 📧 Contact
-
-For any queries or feedback, feel free to reach out:
-**Email**: [your-email@example.com](mailto:your-email@example.com)
-**GitHub**: \[your GitHub profile]
-
----
-
-Let me know if you'd like me to generate this as an actual file or tweak it based on your project URL, video link, or specific bonus features you've added.
