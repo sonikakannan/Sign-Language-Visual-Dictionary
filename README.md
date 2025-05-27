@@ -1,7 +1,3 @@
-Here's a sample `README.md` file tailored to your assignment for the **SignSetu MERN Stack Internship – Quick Assignment Round**:
-
----
-
 # 🧠 Mini Sign Language Visual Dictionary
 
 This is a mini project built as part of the **SignSetu MERN Stack Internship – Quick Assignment Round**. The application allows users to view and add sign language words with definitions, images, and videos.
@@ -10,10 +6,10 @@ This is a mini project built as part of the **SignSetu MERN Stack Internship –
 
 ## 🚀 Tech Stack
 
-* **Frontend**: React.js, Tailwind CSS, Material UI, React Toastify
+* **Frontend**: HTML, CSS, React.js
 * **Backend**: Node.js, Express.js
 * **Database**: MongoDB
-* **Optional Features Used**: Mobile responsiveness, Toast notifications, Loading spinner
+* **Addtional Features Used**: Tailwind CSS, Material UI, React Toastify
 
 ---
 
