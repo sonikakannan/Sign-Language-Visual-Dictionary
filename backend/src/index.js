@@ -21,6 +21,10 @@ app.use(cors({
 
 app.use('/', wordRoute)
 
+app.get('/', (req, res) => {
+  res.send('API is working!');
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
   connectDB();

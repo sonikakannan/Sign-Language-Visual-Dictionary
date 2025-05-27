@@ -1,9 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// wordApi.js
+const BASE_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5001"
+    : "https://sign-language-visual-dictionary.onrender.com";
+
 export const wordApi = createApi({
   reducerPath: 'wordApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5001' }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
     getWordByQuery: builder.query({
       query: (query) => `/words/${query.toLowerCase()}`
