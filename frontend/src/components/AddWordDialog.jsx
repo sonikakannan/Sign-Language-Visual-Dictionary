@@ -7,11 +7,13 @@ const AddWordDialog = ({ open, handleClose, onSuccess }) => {
   const [definition, setDefinition] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const [createWord] = useCreateWordMutation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const payload = { word, definition, imageUrl, videoUrl };
 
     try {
@@ -21,6 +23,8 @@ const AddWordDialog = ({ open, handleClose, onSuccess }) => {
       handleClose();
     } catch (error) {
       toast.error("Something went wrong.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -66,14 +70,38 @@ const AddWordDialog = ({ open, handleClose, onSuccess }) => {
             type="button"
             onClick={handleClose}
             className="px-4 py-2 bg-gray-300 rounded"
+            disabled={isLoading}
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-purple-600 text-white rounded"
+            className="px-4 py-2 bg-purple-600 text-white rounded flex items-center justify-center"
+            disabled={isLoading}
           >
-            Save
+            {isLoading ? (
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  fill="none"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                />
+              </svg>
+            ) : (
+              "Save"
+            )}
           </button>
         </div>
       </form>
