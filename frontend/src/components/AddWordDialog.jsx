@@ -76,7 +76,7 @@ const AddWordDialog = ({ open, handleClose, onSuccess }) => {
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-purple-600 text-white rounded flex items-center justify-center"
+            className="px-4 py-2 bg-purple-600 text-white rounded flex items-center justify-center cursor-pointer"
             disabled={isLoading}
           >
             {isLoading ? (
