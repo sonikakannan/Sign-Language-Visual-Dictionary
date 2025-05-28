@@ -1,5 +1,5 @@
 import express from 'express'
-import { addWord, deleteWord, editWord, filterByWord, listAllWords } from '../controller/wordData.controller.js'
+import { addWord, deleteWord, filterByWord, listAllWords } from '../controller/wordData.controller.js'
 
 const router =express.Router()
 
